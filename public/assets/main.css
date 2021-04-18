@@ -1,0 +1,175 @@
+*{box-sizing: border-box}
+
+/* Hide tanda panah di input type number (Chrome, Safari, Edge, Opera) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Hide tanda panah di input type number (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.white-space {
+    height: 50px;
+}
+.hide {
+    display: none;
+}
+
+.judul {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    text-align:left;
+    font-family:sans-serif;
+    text-shadow: 2px 2px 5px red;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(29, 29, 29);
+    /*position: -webkit-sticky;*/
+    position: sticky; 
+    top: 0;
+}
+.tablink{
+    background-color: rgb(29, 29, 29);
+    float: left;
+    width: 15%;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+    font-family: cursive;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.tablink:hover {
+    color: white;
+    background-color: rgba(167, 167, 167, 0.644);
+    transition: background-color .5s ease;
+}
+
+.content {
+    color: black;
+    font-family: sans-serif;
+    padding: 10px 5px;
+}
+#Home{background-color: rgba(168, 45, 45, 0.938)}
+#Github{background-color: rgb(185, 106, 32)}
+#Galeri{background-color: rgb(98, 178, 231); color: black;}
+
+.card-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    float: left;
+    width: 250px;
+    background-color: rgb(165, 62, 62);
+    padding: 7px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.644);
+}
+.card-content-1, .card-content-2, .card-content-3, .card-content-4{
+    background-color: rgba(179, 179, 179, 0.808);
+    color: rgb(0, 0, 0);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-content-1{
+    background-color: black;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+.card-content-3, .card-content-4{
+    padding: 5px 10px;
+}
+.card-content-4{
+    overflow: hidden;
+    background-color: rgb(29, 29, 29);
+}
+.btn-in-card{
+    background-color: white;
+    border: none;
+    width: 60px;
+    padding: 5px 5px;
+    margin: 4px 4px;
+    float: right;
+    cursor: pointer;
+}
+.btn-in-form{
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px auto 0px auto;
+    padding: 10px 0px 10px 0px;
+    cursor: pointer;
+}
+.red{
+    background-color: rgb(214, 25, 12);
+    border: 3px solid rgb(214, 25, 12);
+}
+.green{
+    background-color: rgb(35, 250, 27);
+    border: 3px solid rgb(35, 250, 27);
+}
+.btn-in-form:hover{
+    background-color: rgb(255, 244, 244);
+    border-radius: 3px;
+}
+.orange-hover:hover{
+    background-color: rgb(255, 123, 0);
+}
+.red-hover:hover{
+    background-color: rgb(214, 25, 12);
+    color: white;
+    font-weight: bold;
+}
+
+.form-popup{
+    width: 400px;
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 2%;
+    border: 4px solid black;
+    border-radius: 3px;
+}
+.form-popup-container{
+    background-color: rgba(206, 206, 206, 0.95);
+    padding: 5px;
+}
+.form-popup-container input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    margin: 0px auto 20px auto;
+}
+.form-popup-container label{
+    font-size: 22px;
+}
+
+
+.footer{
+    background-color: #777;
+    text-align: center;
+    font-size: 10px;
+    padding: 20px;
+    color: white;
+}

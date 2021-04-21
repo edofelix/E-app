@@ -67,7 +67,7 @@ input[type=number] {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 }
 .card{
     float: left;
@@ -77,6 +77,14 @@ input[type=number] {
     margin: 10px 5px;
     border-radius: 5px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.644);
+}
+.btn-tambah{
+    width: 100px;
+    padding: 5px;
+}
+.btn-tambah:hover{
+    font-weight: bold;
+    cursor: pointer;
 }
 .card-content-1, .card-content-2, .card-content-3, .card-content-4{
     background-color: rgba(179, 179, 179, 0.808);
@@ -125,8 +133,8 @@ img{
     border: 3px solid rgb(214, 25, 12);
 }
 .green{
-    background-color: rgb(35, 250, 27);
-    border: 3px solid rgb(35, 250, 27);
+    background-color: rgb(46, 250, 80);
+    border: 3px solid rgb(82, 243, 76);
 }
 .btn-in-form:hover{
     background-color: rgb(255, 244, 244);

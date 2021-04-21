@@ -9,6 +9,8 @@
 @section('konten')
 <div class="content">
     <h1>Cards</h1>
+    <button class="green btn-tambah" onclick="openTambah()">TAMBAH</button>
+
     <div class="card-container">
 @foreach($barang as $v)
 <div class="card">
@@ -28,6 +30,26 @@
 </div>
 @endforeach
     </div>
+</div>
+
+<div class="form-popup" id="formTambah">
+    <form action="/ehome/tambah" class="form-popup-container" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <h1>Tambah<h1>
+
+        <label for="nama"><b>Nama</b></label>
+        <input type="text" placeholder="Nama" name="nama" id="idNama" required><br>
+
+        <label for="harga"><b>Harga</b></label>
+        <input type="number" placeholder="..." name="harga" id="idHarga" required><br>
+
+        <label for="stok"><b>Stok</b></label>
+        <input type="number" placeholder="..." name="stok" id="idStok" required><br>
+        <input type="hidden" name="bugSweep" value="">
+
+        <button type="submit" class="green btn-in-form" value="tambah">Tambah</button>
+        <button class="red btn-in-form" onclick="close()">BATAL</button>
+    </form>
 </div>
 
 <div class="form-popup" id="formEdit">
@@ -59,12 +81,27 @@ function openEdit(nama, harga, stok, id) {
   document.getElementById("idId").value = id;
 }
 
+function openTambah() {
+  document.getElementById("formTambah").style.display = "block";
+  document.getElementById("idNama2").value = "";
+  document.getElementById("idHarga2").value = "";
+  document.getElementById("idStok2").value = "";
+}
+
 function closeEdit() {
   document.getElementById("formEdit").style.display = "none";
+  document.getElementById("formTambah").style.display = "none";
   document.getElementById("idJudulForm").innerHTML = "";
   document.getElementById("idNama").value = "";
   document.getElementById("idHarga").value = "";
   document.getElementById("idStok").value = "";
+}
+function close(){
+  document.getElementById("idJudulForm2").innerHTML = "";
+  document.getElementById("idNama2").value = "";
+  document.getElementById("idHarga2").value = "";
+  document.getElementById("idStok2").value = "";
+  document.getElementById("formTambah").style.display = "none";
 }
 </script>
 @endsection

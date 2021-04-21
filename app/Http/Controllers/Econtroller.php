@@ -21,6 +21,11 @@ class Econtroller extends Controller
         
         return view('ehome',['barang'=>$barang]);
     }
+
+    public function tambah(){
+        return redirect()->back();
+    }
+
     public function update(Request $req){
         DB::table('barang')->where('id', $req->id)->update(
             [

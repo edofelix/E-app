@@ -22,7 +22,14 @@ class Econtroller extends Controller
         return view('ehome',['barang'=>$barang]);
     }
 
-    public function tambah(){
+    public function tambah(Request $req){
+        DB::table('barang')->insert(
+            [
+                'nama'=>$req->nama2,
+                'harga'=>$req->harga2,
+                'stok'=>$req->stok2
+            ]
+        );
         return redirect()->back();
     }
 
@@ -36,7 +43,8 @@ class Econtroller extends Controller
         );
         //return $this->ehome();
         //yang bawah ini call route(berdasarkan nama routenya) langsung dari sini(controller)
-        return redirect()->route('ehome');
+        //return redirect()->route('ehome');
+        return redirect()->back();
     }
 
     public function egaleri(){

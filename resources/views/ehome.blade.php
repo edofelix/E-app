@@ -37,18 +37,17 @@
         {{ csrf_field() }}
         <h1>Tambah<h1>
 
-        <label for="nama"><b>Nama</b></label>
-        <input type="text" placeholder="Nama" name="nama" id="idNama" required><br>
+        <label for="nama2"><b>Nama</b></label>
+        <input type="text" placeholder="Nama" name="nama2" required><br>
 
-        <label for="harga"><b>Harga</b></label>
-        <input type="number" placeholder="..." name="harga" id="idHarga" required><br>
+        <label for="harga2"><b>Harga</b></label>
+        <input type="number" placeholder="..." name="harga2" required><br>
 
-        <label for="stok"><b>Stok</b></label>
-        <input type="number" placeholder="..." name="stok" id="idStok" required><br>
-        <input type="hidden" name="bugSweep" value="">
+        <label for="stok2"><b>Stok</b></label>
+        <input type="number" placeholder="..." name="stok2" required><br>
 
-        <button type="submit" class="green btn-in-form" value="tambah">Tambah</button>
-        <button class="red btn-in-form" onclick="close()">BATAL</button>
+        <button type="submit" class="green btn-in-form" value="tambah">Tambah</button><br>
+        <div class="red btn-in-form" onclick="tutup()">BATAL</div>
     </form>
 </div>
 
@@ -67,12 +66,13 @@
         <input type="number" placeholder="..." name="stok" id="idStok" required><br>
         <input type="hidden" name="id" id="idId" value="">
         <button type="submit" class="green btn-in-form" value="simpan">SIMPAN</button>
-        <button class="red btn-in-form" onclick="closeEdit()">BATAL</button>
+        <div class="red btn-in-form" onclick="tutup()">BATAL</div>
     </form>
 </div>
 
 <script>
 function openEdit(nama, harga, stok, id) {
+  tutup();
   document.getElementById("formEdit").style.display = "block";
   document.getElementById("idJudulForm").innerHTML = nama;
   document.getElementById("idNama").value = nama;
@@ -82,25 +82,12 @@ function openEdit(nama, harga, stok, id) {
 }
 
 function openTambah() {
+  tutup();
   document.getElementById("formTambah").style.display = "block";
-  document.getElementById("idNama2").value = "";
-  document.getElementById("idHarga2").value = "";
-  document.getElementById("idStok2").value = "";
 }
 
-function closeEdit() {
+function tutup() {
   document.getElementById("formEdit").style.display = "none";
-  document.getElementById("formTambah").style.display = "none";
-  document.getElementById("idJudulForm").innerHTML = "";
-  document.getElementById("idNama").value = "";
-  document.getElementById("idHarga").value = "";
-  document.getElementById("idStok").value = "";
-}
-function close(){
-  document.getElementById("idJudulForm2").innerHTML = "";
-  document.getElementById("idNama2").value = "";
-  document.getElementById("idHarga2").value = "";
-  document.getElementById("idStok2").value = "";
   document.getElementById("formTambah").style.display = "none";
 }
 </script>

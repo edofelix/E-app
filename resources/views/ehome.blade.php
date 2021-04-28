@@ -1,4 +1,4 @@
-@extends('home')
+@extends('master')
 
 @section('navbar')
 <a href="/ehome"><button class="tablink" id="Home">Home</button></a>

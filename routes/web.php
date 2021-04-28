@@ -16,3 +16,10 @@ Route::get('/egaleri', [Econtroller::class, 'egaleri']);
 
 Route::post('/ehome/update', [Econtroller::class, 'update']);
 Route::post('/ehome/tambah', [Econtroller::class, 'tambah']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

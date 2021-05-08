@@ -1,8 +1,11 @@
-Percobaan membuat aplikasi web
+Web Apps
 
 Framework : Laravel
 
+What inside :
+- CRUD
+- Card view
+- Sweetalert from https://sweetalert.js.org/
+
 Note :
-- project ini blm bisa dicoba, karena Databasenya blm saya update ke github
-- 
-- Untuk saat ini CRUD hanya bisa Update dan Insert
+- Database(.sql file) not uploaded yet.

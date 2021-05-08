@@ -24,13 +24,25 @@
         <p class="hide">{{$v->id}}</p>
     </div>
     <div class="card-content-4">
-        <button class="btn-in-card red-hover" >Hapus</button>
+        <button class="btn-in-card red-hover" onclick="hapus('{{ $v->id }}')">
+            <form action="{{ route('hapusbrg', $v->id) }}" id="formhapus{{ $v->id }}" method="POST">
+            @csrf
+            @method('delete')
+            </form>
+            Hapus
+        </button>
         <button class="btn-in-card orange-hover" onclick="openEdit('{{ $v->nama }}', '{{ $v->harga }}', '{{ $v->stok }}', '{{ $v->id }}')">Edit</button>
     </div>
 </div>
 @endforeach
     </div>
 </div>
+
+<div class="">
+    {{ $barang->links('layout.paginationlinks') }}
+</div>
+<input type="number" placeholder="to page ..." name="page" id="idPage">
+<button type="submit" onclick="toPage()">OK</button>
 
 <div class="form-popup" id="formTambah">
     <form action="/ehome/tambah" class="form-popup-container" method="post" enctype="multipart/form-data">
@@ -89,6 +101,31 @@ function openTambah() {
 function tutup() {
   document.getElementById("formEdit").style.display = "none";
   document.getElementById("formTambah").style.display = "none";
+}
+
+function hapus(id){
+
+    swal({
+        title: "Yakin ingin hapus?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            document.getElementById('formhapus'+id).submit();
+            swal("Selesai", {
+            icon: "success",
+            });
+        }
+    });
+}
+
+function toPage(){
+    var v = document.getElementById("idPage").value;
+    location.href = "ehome?page="+v;
+
 }
 </script>
 @endsection

@@ -10,14 +10,14 @@ class Econtroller extends Controller
 
     public function home(){
         // Mengambil data dari tabel 'barang' di database
-        $barang = DB::table('barang')->get();
+        $barang = DB::table('barang')->paginate(8);
 
         return view('/home',['barang'=>$barang]);
     }
 
     public function ehome(){
         // Mengambil data dari tabel 'barang' di database
-        $barang = DB::table('barang')->get();
+        $barang = DB::table('barang')->paginate(4);
         
         return view('ehome',['barang'=>$barang]);
     }
@@ -44,6 +44,12 @@ class Econtroller extends Controller
         //return $this->ehome();
         //yang bawah ini call route(berdasarkan nama routenya) langsung dari sini(controller)
         //return redirect()->route('ehome');
+        return redirect()->back();
+    }
+
+    public function hapus($id){
+        DB::table('barang')->where('id', $id)->delete();
+    
         return redirect()->back();
     }
 
